@@ -2031,7 +2031,7 @@ input, select, textarea {
 		}
 
 	select {
-		background-image: url("images/bg.PNG");
+
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
