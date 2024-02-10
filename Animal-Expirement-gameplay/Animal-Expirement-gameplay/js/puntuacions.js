@@ -1,7 +1,0 @@
-
-
-function  obtener_punt(){
-    
-   
-    
-}
