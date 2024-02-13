@@ -27,21 +27,45 @@
 }
 
 .col {
+  position: relative;
   flex: 1;
   padding: 16px;
 }
 
-.gameboy {border-top-right-radius: 24px;
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 120px;
-    background-color: hsl(177, 100%, 75%);
+.content{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -65%);
+  
     
-    /*position: relative;
-    height: 504px;
-    width: 330px;
-    transform: scale(1);
-    flex-shrink: 0;*/
-  }
+
+}
+
+.gameboy {
+    
+  position: relative;
+   height: 504px;
+   width: 330px;
+   transform: scale(1);
+   flex-shrink: 0;
+ }
+
+
+.front-plate {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 120px;
+  background-color: hsl(177, 100%, 75%);
+  
+}
+
+ /*
    /*
   .front-plate {
     position: relative;
