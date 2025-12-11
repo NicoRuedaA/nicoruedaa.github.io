@@ -1,0 +1,344 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #1e2a3a;
+  color: #ffffff;
+
+  /* CAMBIO: Usar un padding fijo más razonable en vez de porcentaje */
+  padding: 40px 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* En style.css */
+a {
+  color: #66b2ff; /* Azul claro para enlaces */
+  text-decoration: none; /* Opcional: quitar subrayado */
+}
+a:hover {
+  text-decoration: underline; /* Opcional: subrayar al pasar el ratón */
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+  background-color: #2a3b51;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.top-icons {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center; /* Centra los círculos */
+  gap: 20px; /* Espacio entre los círculos */
+}
+
+/* círculo*/
+.top-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%; /* Forma redonda */
+  width: 50px; /* Ancho del círculo */
+  height: 50px; /* Alto del círculo */
+
+  background-color: #1e2a3a;
+
+  text-decoration: none; /* Quita el subrayado*/
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* El icono dentro del círculo */
+.top-icons i {
+  color: #ffffff; /* Icono blanco*/
+  font-size: 1.2em;
+  margin: 0; /* IQuitamos el margen izquierdo*/
+}
+
+/* Efecto al pasar el ratón  */
+.top-icons a:hover {
+  transform: scale(1.1); /* Crece un poco */
+  background-color: #2c3e50; /* Cambia  color */
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #2c3e50;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  color: #a0b0c0;
+  text-transform: uppercase;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 0.9em;
+  color: #a0b0c0;
+  border-top: 1px solid #34495e;
+  padding-top: 15px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+  color: #ffffff;
+}
+
+.resume-content {
+  display: flex;
+  gap: 80px; /* CAMBIO: Aumentado de 40px a 80px para más separación */
+  align-items: flex-start; /* Asegura que empiecen arriba alineados */
+}
+
+/* OPCIONAL: Si quieres una línea vertical que separe las columnas */
+.left-column {
+  flex: 2;
+  padding-right: 40px; /* Espacio extra dentro de la columna izquierda */
+  border-right: 1px solid #34495e; /* Línea divisoria sutil */
+}
+
+.right-column {
+  flex: 1;
+  padding-left: 20px; /* Un poco de "aire" al inicio de la columna derecha */
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.section-title i {
+  margin-right: 10px;
+  color: #a0b0c0;
+}
+
+p {
+  color: #a0b0c0;
+  font-size: 0.95em;
+}
+
+.work-entry {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* En style.css */
+.work-entry::before {
+  content: "•"; /* Usar el mismo bullet point que en work-list */
+  font-family: Arial, sans-serif; /* Ya no necesitamos Font Awesome */
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  top: 0px; /* Ajustar posición si es necesario */
+  font-size: 1.2em; /* Hacerlo más grande */
+  color: #66b2ff; /* Usar el color de énfasis */
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+.work-role {
+  font-weight: bold;
+}
+
+.work-company {
+  color: #a0b0c0;
+}
+
+.work-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.work-list li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+  color: #a0b0c0;
+  font-size: 0.9em;
+}
+
+.work-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #a0b0c0;
+}
+
+.tech-stack-list,
+.soft-skills-list,
+.projects-list,
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-stack-list li,
+.soft-skills-list li,
+.projects-list li,
+.education-list li {
+  margin-bottom: 10px;
+  color: #a0b0c0;
+  font-size: 0.95em;
+  border-bottom: 1px solid #34495e;
+  padding-bottom: 5px;
+}
+
+.soft-skills-list li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-bottom: none;
+  background-color: #2c3e50;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 0.85em;
+}
+
+.projects-list li h3 {
+  margin: 0 0 5px 0;
+  color: #ffffff;
+  font-size: 1em;
+}
+
+.education-list li h3 {
+  margin: 0 0 5px 0;
+  color: #ffffff;
+  font-size: 1em;
+}
+
+.education-list li span {
+  display: block;
+  font-size: 0.9em;
+  color: #a0b0c0;
+}
+
+.languages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.languages-list li {
+  margin-bottom: 15px;
+}
+
+.language-name {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 0.95em;
+}
+
+.progress-bar {
+  background-color: #2c3e50;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* NUEVO: Esto separa la barra azul del texto de arriba */
+  margin-top: 8px;
+
+  /* NUEVO: Esto separa la barra azul del siguiente elemento de la lista */
+  margin-bottom: 5px;
+}
+
+/* Para asegurar que el texto de la tecnología (span) no choque */
+.tech-stack-list li span {
+  display: block; /* Asegura que el texto ocupe su propia línea */
+  font-weight: bold; /* Opcional: hace el título más legible */
+  margin-bottom: 2px;
+}
+
+/* En style.css */
+.progress {
+  background-color: #66b2ff; /* Usa el mismo color del link/énfasis */
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .resume-content {
+    flex-direction: column;
+  }
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .top-icons {
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilos para la fila de iconos de software */
+
+/* Quitamos los estilos de lista por defecto y los ponemos en fila */
+.software-list.icons-row {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0; /* Un poco de margen superior */
+  display: flex;
+  gap: 20px; /* Espacio entre iconos */
+}
+
+/* Clase común para los iconos SVG y Font Awesome */
+.software-icon {
+  height: 40px; /* Tamaño del icono */
+  width: 40px; /* Asegura que sean cuadrados */
+  font-size: 40px; /* Para el icono de Font Awesome (Blender) */
+
+  /* Usamos el color azul claro de tus enlaces para los iconos */
+  fill: #66b2ff; /* 'fill' colorea los SVG */
+  color: #66b2ff; /* 'color' colorea Font Awesome */
+
+  transition: transform 0.3s ease, fill 0.3s ease, color 0.3s ease;
+}
+
+/* Un pequeño efecto al pasar el ratón por encima */
+.software-icon:hover {
+  transform: scale(1.1); /* Crecen un 10% */
+  fill: #ffffff; /* Se vuelven blancos al pasar el mouse (opcional) */
+  color: #ffffff;
+}
