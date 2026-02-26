@@ -1,0 +1,23 @@
+#fondo-aliens {
+  position: fixed; /* Se queda fijo aunque hagas scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Sin bordes */
+  z-index: -1; /* ¡IMPORTANTE! Esto lo manda detrás de todo */
+
+  /* Opcional: Esto asegura que el fondo no robe los clicks del usuario. 
+         Así puedes hacer click en botones de tu web sin que el iframe estorbe. */
+  pointer-events: none;
+}
+
+/* Un contenedor de ejemplo para tu contenido */
+.contenido {
+  padding: 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Un poco de fondo semitransparente para leer mejor */
+  margin: 100px auto;
+  max-width: 600px;
+  border-radius: 10px;
+}

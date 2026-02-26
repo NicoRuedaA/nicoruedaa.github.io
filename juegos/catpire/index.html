@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Catpire</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta id="gameViewport" name="viewport" content="width=device-width initial-scale=1" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div align="center" id="embed-html"></div>
+    <script type="text/javascript" src="html/html.nocache.js"></script>
+  </body>
+
+  <script>
+    (function () {
+      // 1. Avisar a la Switch cuando se pulsan teclas dentro del juego
+      window.addEventListener("keydown", (e) => {
+        window.parent.postMessage({ tipo: "KEY_EVENT", key: e.key, estado: true }, "*");
+      });
+      window.addEventListener("keyup", (e) => {
+        window.parent.postMessage({ tipo: "KEY_EVENT", key: e.key, estado: false }, "*");
+      });
+
+      // 2. Avisar a la Switch cuando el ratón se mueve sobre el juego
+      window.addEventListener("mousemove", (e) => {
+        const rect = window.frameElement ? window.frameElement.getBoundingClientRect() : { left: 0, top: 0 };
+        window.parent.postMessage(
+          {
+            tipo: "MOUSE_MOVE",
+            clientX: e.clientX + rect.left,
+            clientY: e.clientY + rect.top,
+          },
+          "*",
+        );
+      });
+    })();
+  </script>
+</html>
