@@ -1,4 +1,10 @@
 // 1. Definimos el Header
+
+const fontAwesome = document.createElement("link");
+fontAwesome.rel = "stylesheet";
+fontAwesome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+document.head.appendChild(fontAwesome);
+
 class MiHeader extends HTMLElement {
   connectedCallback() {
     // Aquí dentro pones todo el HTML de tu header
@@ -9,7 +15,9 @@ class MiHeader extends HTMLElement {
         <a href="index.html">Inicio </a>
         <a href="about-me.html"> Sobre mi</a>
         <a href="decks.html"> Decks </a>
-       
+        <a href="https://github.com/NicoRuedaA" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nicolas-rueda-araque-737241199/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+
       </nav>
     </header>
         `;
@@ -22,7 +30,6 @@ class MiFooter extends HTMLElement {
     // Aquí dentro pones todo el HTML de tu footer
     this.innerHTML = `
         <footer>
-         <h4>página en construcción</h4>
       <p>&copy; 2025-26 Nicolás Rueda</p>
     </footer>
         `;

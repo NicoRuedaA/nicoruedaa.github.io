@@ -1,21 +1,32 @@
 /* Estilos Base */
 body {
+  margin: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background: transparent;
+  overflow: hidden;
 }
 
 .box {
-  width: 1000px; /* Mantenemos tamaño fijo para evitar desfase del mouse */
-  height: 400px;
-  margin: auto;
+  flex: 1;
+  min-height: 0;
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-body {
-  width: 80%;
-  height: 81.25%;
-  margin: 15% auto 10%;
+  width: min(100vw, calc(100dvh * 112 / 45));
+  height: auto;
+
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  border-radius: 60px;
+  border-radius: 80px;
+  align-items: stretch; /* joy-cons crecen hasta el alto de la pantalla */
 }
 
 /* Pantalla e Iframe */
@@ -24,6 +35,9 @@ body {
   border-top: 10px solid #5d5d5d;
   border-radius: 0 0 10px 10px;
   position: relative;
+
+  /* Esto es la clave: la columna central mantiene 16:9 */
+  aspect-ratio: 16 / 9;
 }
 
 .screen {
@@ -49,18 +63,21 @@ body {
 .joy-con-right {
   position: relative;
   border-top: 10px solid #3a4365;
+  overflow: hidden;
 }
 
 .joy-con-left {
-  background: #2f3962;
+  background: transparent;
   border-radius: 70px 0 0 70px;
   border-left: 7px solid #3a4365;
+  position: relative;
 }
 
 .joy-con-right {
-  background: #2b355a;
+  background: transparent;
   border-radius: 0 70px 70px 0;
   border-right: 7px solid #39405b;
+  position: relative;
 }
 
 /* Joysticks */
@@ -91,9 +108,15 @@ body {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
-.joystick-left,
+.joystick-left {
+  background: #b4b4b3;
+  z-index: 2;
+  transition: transform 0.1s linear;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 .joystick-right {
-  background: #1a1a1a;
+  background: #ecec05;
   z-index: 2;
   transition: transform 0.1s linear;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -106,7 +129,7 @@ body {
   left: 68%;
   width: 20%;
   height: 2%;
-  background: #1a1a1a;
+  background: #b4b3b3;
   border-radius: 3px;
 }
 .plus-sign-2 {
@@ -115,7 +138,7 @@ body {
   left: 10%;
   width: 20%;
   height: 2%;
-  background: #1a1a1a;
+  background: #b4b3b3;
   border-radius: 3px;
 }
 
@@ -125,7 +148,7 @@ body {
   right: 77%;
   width: 5%;
   height: 8%;
-  background: #1a1a1a;
+  background: #b4b3b3;
   border-radius: 3px;
 }
 
@@ -133,14 +156,28 @@ body {
 .d-pad-left-2,
 .d-pad-left-3,
 .d-pad-left-4,
-.d-pad-right-1,
-.d-pad-right-2,
-.d-pad-right-3,
-.d-pad-right-4 {
+.d-pad-right-4,
+.d-pad-right-2 {
   position: absolute;
   width: 23%;
   height: 8%;
-  background: #1a1a1a;
+  background: #b4b3b3;
+  border-radius: 100%;
+}
+
+.d-pad-right-1 {
+  position: absolute;
+  width: 23%;
+  height: 8%;
+  background: #be2323;
+  border-radius: 100%;
+}
+
+.d-pad-right-3 {
+  position: absolute;
+  width: 23%;
+  height: 8%;
+  background: #0bddcc;
   border-radius: 100%;
 }
 
@@ -186,7 +223,7 @@ body {
   top: 85%;
   width: 23%;
   height: 8%;
-  background: #1a1a1a;
+  background: #b4b3b3;
 }
 
 .small-square {

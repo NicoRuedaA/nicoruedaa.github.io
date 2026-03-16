@@ -10,7 +10,7 @@ body {
   text-align: center;
 
   color: #ffffff;
-  padding: 40px 20px;
+
   margin: 0;
   line-height: 1.6;
   background-color: #1e243c;
@@ -18,17 +18,16 @@ body {
 
 .topBar {
   background-color: #1e243c;
-  text-align: center;
-  max-width: 900px;
+  width: 95vw; /* Hacemos que mida exactamente lo mismo de ancho que la consola (95vw) */
+  max-width: 1500px; /* Le ponemos un límite muy alto por si alguien tiene una pantalla ultra panorámica */
   margin: 0 auto;
+  padding: 15px 0; /* Un poco de espacio arriba y abajo */
+  border-radius: 10px; /* Opcional: bordes un poco redondeados para que combine con la consola */
 
-  /* AGREGA ESTO PARA IGUALAR AL CONTAINER: */
-  padding-left: 3%;
-  padding-right: 3%;
-
-  /* Opcional: Si quieres que el texto no quede pegado arriba/abajo */
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* Usamos Flexbox para centrar y separar los enlaces */
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 summary {
@@ -133,20 +132,6 @@ h2 {
 .contact-info i {
   margin-right: 5px;
   color: #ffffff;
-}
-
-/* QR Section */
-.qr-section {
-  width: 100%; /* Fuerza a que ocupe todo el ancho y baje de línea */
-  text-align: center; /* Centra la imagen horizontalmente */
-  margin-top: 20px; /* Un poco de espacio por encima */
-  padding-top: 20px; /* Espacio extra interno */
-  border-top: 1px solid #34495e; /* Opcional: Una línea separadora elegante */
-}
-
-.qr-section img {
-  max-width: 150px;
-  height: auto;
 }
 
 /* Layout del contenido principal */
@@ -417,4 +402,10 @@ img {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
+}
+
+m-header,
+m-footer {
+  width: 100%;
+  flex-shrink: 0; /* Esto le dice a Flexbox: "¡Prohibido encoger o aplastar estos elementos!" */
 }
