@@ -16,7 +16,7 @@ body {
   background-color: #1e243c;
 }
 
-.topBar {
+.navbar {
   background-color: #1e243c;
   width: 95vw; /* Hacemos que mida exactamente lo mismo de ancho que la consola (95vw) */
   max-width: 1500px; /* Le ponemos un límite muy alto por si alguien tiene una pantalla ultra panorámica */
