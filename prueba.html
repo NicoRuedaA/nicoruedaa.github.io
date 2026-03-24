@@ -108,18 +108,18 @@
     </section>
 
     <!-- PORTFOLIO -->
+
     <section class="section portfolio" id="portfolio">
       <div class="section-inner">
         <div class="section-tag">Portfolio</div>
         <h2 class="section-title">Personal Projects</h2>
         <div class="portfolio-grid">
-          <div class="portfolio-card">
+          <div class="portfolio-card" id="btnAbrir">
             <div class="portfolio-img" style="background: #1a2a3a"></div>
             <div class="portfolio-info">
               <span class="portfolio-cat">Mobile App</span>
               <h3>Finance Dashboard</h3>
             </div>
-            <a href="#" class="portfolio-link"><i class="fa fa-arrow-right"></i></a>
           </div>
           <div class="portfolio-card">
             <div class="portfolio-img" style="background: #1a3a2a"></div>
@@ -127,7 +127,6 @@
               <span class="portfolio-cat">Web Design</span>
               <h3>E-Commerce Platform</h3>
             </div>
-            <a href="#" class="portfolio-link"><i class="fa fa-arrow-right"></i></a>
           </div>
           <div class="portfolio-card">
             <div class="portfolio-img" style="background: #2a1a3a"></div>
@@ -135,7 +134,6 @@
               <span class="portfolio-cat">Brand Identity</span>
               <h3>Startup Branding</h3>
             </div>
-            <a href="#" class="portfolio-link"><i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -160,6 +158,17 @@
       </div>
     </section>
 
+    <dialog id="miModal">
+      <div class="modal-header">
+        <span>Ventana Externa</span>
+        <button id="btnCerrar">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <iframe src="index.html" frameborder="0"></iframe>
+      </div>
+    </dialog>
+
     <!-- FOOTER -->
     <footer class="footer">
       <p>© 2026 Nicolás Rueda.</p>
@@ -170,5 +179,6 @@
     </footer>
 
     <script src="JS/components.js"></script>
+    <script src="JS/index.js"></script>
   </body>
 </html>
