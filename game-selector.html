@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UI Switch-like Menu</title>
+    <title>Game Selector</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@400;700&display=swap");
 
@@ -173,11 +173,11 @@
     </div>
 
     <div class="carousel">
-      <div class="game-tile">
-        <a href="juegos/sapoGuvasto/Practica individual.html"><img src="IMG/iconos/sapo.png" alt="Sapo Game" /></a>
+      <div class="game-tile" onclick="loadGame('juegos/sapoGuvasto/index.html')">
+        <img src="IMG/iconos/sapo.png" alt="Sapo Game" /></a>
       </div>
-      <div class="game-tile">
-        <a href="juegos/catpire/index.html"><img src="IMG/iconos/catpire.png" alt="Catpire Game" /></a>
+      <div class="game-tile" onclick="loadGame('juegos/catpire/index.html')">
+        <img src="IMG/iconos/catpire.png" alt="Catpire Game" />
       </div>
       <div class="game-tile game-empty"></div>
       <div class="game-tile game-empty"></div>
@@ -196,5 +196,12 @@
       <div class="sys-btn"></div>
       <div class="sys-btn"></div>
     </div>
+
+    <script>
+  function loadGame(url) {
+    // Le dice al padre que cambie el src del iframe de la pantalla
+    window.parent.loadGame(url);
+  }
+</script>
   </body>
 </html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
+    <title>Game Container</title>
+    <link rel="stylesheet" href="CSS/switch.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/background.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="main-body">
+        <div class="joy-con-left">
+          <iframe id="fondo-aliens" src="background.html"></iframe>
+          <div class="joystick-left-bottom"></div>
+          <div class="joystick-left"></div>
+          <div class="minus-sign"></div>
+          <div class="d-pad-left-1"></div>
+          <div class="d-pad-left-2"></div>
+          <div class="d-pad-left-3"></div>
+          <div class="d-pad-left-4"></div>
+          <div class="small-square"></div>
+        </div>
+
+        <div class="screen-body">
+          <div class="screen">
+            <iframe src="game-selector.html" class="iframe-juego" allowfullscreen> </iframe>
+          </div>
+        </div>
+
+        <div class="joy-con-right">
+          <iframe id="fondo-aliens" src="background.html"></iframe>
+          <div class="joystick-right-bottom"></div>
+          <div class="joystick-right"></div>
+          <div class="plus-sign-1"></div>
+          <div class="plus-sign-2"></div>
+          <div class="d-pad-right-1"></div>
+          <div class="d-pad-right-2"></div>
+          <div class="d-pad-right-3"></div>
+          <div class="d-pad-right-4"></div>
+          <div class="small-circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/switch.js"></script>
+    <script src="JS/joystick.js"></script>
+
+    <script>
+      function loadGame(url) {
+        const iframe = document.querySelector(".iframe-juego");
+        iframe.src = url;
+      }
+    </script>
+  </body>
+</html>

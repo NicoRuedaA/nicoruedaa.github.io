@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Space Invader - JS Loop</title>
+    <title>Background</title>
+
     <style>
       :root {
         --invader-color: #2f385c;
@@ -47,29 +48,53 @@
         width: var(--pixel-size);
         height: var(--pixel-size);
         background: transparent;
-        box-shadow: calc(2 * var(--pixel-size)) 0 var(--invader-color), calc(8 * var(--pixel-size)) 0 var(--invader-color),
-          calc(3 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--invader-color), calc(7 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--invader-color),
-          calc(2 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color), calc(3 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
-          calc(4 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color), calc(5 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
-          calc(6 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color), calc(7 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
-          calc(8 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color), calc(1 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
-          calc(2 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color), calc(4 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
-          calc(5 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color), calc(6 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
-          calc(8 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color), calc(9 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
-          0 calc(4 * var(--pixel-size)) var(--invader-color), calc(1 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
-          calc(2 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color), calc(3 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
-          calc(4 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color), calc(5 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
-          calc(6 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color), calc(7 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
-          calc(8 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color), calc(9 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
-          calc(10 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color), 0 calc(5 * var(--pixel-size)) var(--invader-color),
-          calc(2 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color), calc(3 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
-          calc(4 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color), calc(5 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
-          calc(6 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color), calc(7 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
-          calc(8 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color), calc(10 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
-          0 calc(6 * var(--pixel-size)) var(--invader-color), calc(2 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--invader-color),
-          calc(8 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--invader-color), calc(10 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--invader-color),
-          calc(3 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color), calc(4 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color),
-          calc(6 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color), calc(7 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color);
+        box-shadow:
+          calc(2 * var(--pixel-size)) 0 var(--invader-color),
+          calc(8 * var(--pixel-size)) 0 var(--invader-color),
+          calc(3 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--invader-color),
+          calc(7 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--invader-color),
+          calc(2 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(3 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(4 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(5 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(6 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(7 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(8 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--invader-color),
+          calc(1 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          calc(2 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          calc(4 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          calc(5 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          calc(6 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          calc(8 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          calc(9 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--invader-color),
+          0 calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(1 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(2 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(3 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(4 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(5 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(6 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(7 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(8 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(9 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          calc(10 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--invader-color),
+          0 calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(2 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(3 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(4 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(5 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(6 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(7 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(8 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          calc(10 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--invader-color),
+          0 calc(6 * var(--pixel-size)) var(--invader-color),
+          calc(2 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--invader-color),
+          calc(8 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--invader-color),
+          calc(10 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--invader-color),
+          calc(3 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color),
+          calc(4 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color),
+          calc(6 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color),
+          calc(7 * var(--pixel-size)) calc(7 * var(--pixel-size)) var(--invader-color);
       }
     </style>
   </head>
