@@ -2,7 +2,7 @@ class MiHeader extends HTMLElement {
   connectedCallback() {
     // Aquí dentro pones todo el HTML de tu header
     this.innerHTML = `
-       <iframe id="fondo-aliens" src="background.html"></iframe>
+     
     <header>
       <nav class="topBar">
    
