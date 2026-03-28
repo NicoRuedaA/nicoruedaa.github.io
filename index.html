@@ -2,178 +2,222 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <!-- Para que sea reponsive  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nico Rueda</title>
-    <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
+    <!-- Logos chu-chu-chulos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/background.css" />
+    <!-- Logos chu-chu-chulos -->
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
   </head>
 
   <body>
-    <!-- NAV -->
+    <!-- <iframe id="fondo-aliens" src="background.html" title="Fondo animado decorativo"></iframe> -->
+    <!-- Nav importado de components.js -->
+
     <m-header></m-header>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <iframe id="fondo-aliens" src="background.html"></iframe>
-      <div class="hero-content">
-        <h1 class="hero-name">Nico Rueda</h1>
-        <p class="hero-title">Game Designer & Multiplatform Developer</p>
-        <p class="hero-subtitle">
-          Crafting experiences. <br />
-          Building solutions.
-        </p>
-      </div>
 
-      <div class="hero-image-wrap">
+    <main>
+      <!-- #Seccion 1 -->
+      <section class="me" id="section1">
+        <!-- Fondo importado de background.html+background.css -->
+
+        <!-- Efectos alrededor de la imagen -->
         <div class="image-ring">
-          <div class="image-circle">
-            <img src="IMG/foto.jpg" alt="Nico Rueda" />
-          </div>
+          <!-- Imagen Circular -->
+          <figure class="image-circle">
+            <img src="IMG/foto.jpg" alt="Foto de perfil" />
+          </figure>
         </div>
-        <div class="floating-badge badge-1">Hello World</div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section about" id="about">
-      <div class="section-inner">
-        <div class="section-tag">About me</div>
-        <h2 class="section-title">Who I Am</h2>
-        <p class="about-text">
-          Multiplatform Application Development student with an academic background in Video Game Design, web development, and databases. Solid knowledge in engines like Unity and
-          Godot. I consider myself a proactive person, a fast learner, and problem-solving oriented.
-        </p>
-      </div>
-    </section>
+        <div>
+          <!-- Titulo -->
+          <h1 class="me-name">Nico Rueda</h1>
+          <h2 class="me-title">Game Designer &amp; Multiplatform Developer</h2>
+          <p class="me-subtitle">
+            Crafting experiences. <br />
+            Building solutions.
+          </p>
+        </div>
+      </section>
 
-    <!-- SKILLS -->
-    <section class="section skills" id="skills">
-      <div class="section-inner">
-        <div class="section-tag">Technologies</div>
-        <h2 class="section-title">Game Engines</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fa fa-code"></i></div>
+      <!-- #Seccion 2 -->
+      <section id="section2">
+        <!-- Titulo -->
+        <h2 class="title" id="section2-title">Who I Am</h2>
+        <!-- Descripción -->
+        <p class="description" id="section2-description">Multiplatform Application Development student with background in Video Game Design, Web Development, and Databases.</p>
+      </section>
+
+      <!-- #Seccion 3 -->
+      <section id="section3">
+        <!-- Titulo -->
+        <h2 class="title" id="section3-title">Skill</h2>
+        <!-- Grid -->
+        <ul class="skills-grid">
+          <!-- Item -->
+          <li class="skill-card">
+            <!-- Titulo-->
             <h3>LibGDX</h3>
-            <p>HTML, CSS, JS — bridging design and code.</p>
-            <div class="skill-bar"><div class="skill-fill" style="--pct: 75%"></div></div>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fa fa-paint-brush"></i></div>
-
+            <!-- Descripcion -->
+            <p>Description.</p>
+            <!-- Barra -->
+            <div class="skill-bar">
+              <div class="skill-fill skill-70"></div>
+            </div>
+            <!-- Texto -->
+            <span class="skill-pct">70%</span>
+          </li>
+          <!-- Item -->
+          <li class="skill-card">
+            <!-- Titulo-->
             <h3>Unity</h3>
-            <p>Pixel-perfect interfaces with strong visual hierarchy.</p>
-            <div class="skill-bar"><div class="skill-fill" style="--pct: 92%"></div></div>
-            <span class="skill-pct">92%</span>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fa fa-users"></i></div>
+            <!-- Descripcion -->
+            <p>Description.</p>
+            <!-- Barra -->
+            <div class="skill-bar">
+              <div class="skill-fill skill-70"></div>
+            </div>
+            <!-- Texto -->
+            <span class="skill-pct">70%</span>
+          </li>
+          <!-- Item -->
+          <li class="skill-card">
+            <!-- Titulo-->
             <h3>Unreal Engine</h3>
-            <p>User flows, wireframes, and usability testing.</p>
-            <div class="skill-bar"><div class="skill-fill" style="--pct: 85%"></div></div>
-            <span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fa fa-mobile-alt"></i></div>
+            <!-- Descripcion -->
+            <p>Description.</p>
+            <!-- Barra -->
+            <div class="skill-bar">
+              <div class="skill-fill skill-70"></div>
+            </div>
+            <!-- Texto -->
+            <span class="skill-pct">70%</span>
+          </li>
+          <!-- Item -->
+          <li class="skill-card">
+            <!-- Titulo-->
             <h3>Godot</h3>
-            <p>Interactive prototypes in Figma and Framer.</p>
-            <div class="skill-bar"><div class="skill-fill" style="--pct: 88%"></div></div>
-            <span class="skill-pct">88%</span>
-          </div>
-        </div>
-      </div>
-    </section>
+            <!-- Descripcion -->
+            <p>Description.</p>
+            <!-- Barra -->
+            <div class="skill-bar">
+              <div class="skill-fill skill-70"></div>
+            </div>
+            <!-- Texto -->
+            <span class="skill-pct">70%</span>
+          </li>
+        </ul>
+      </section>
 
-    <!-- EXPERIENCES -->
-    <section class="section experiences" id="experiences">
-      <div class="section-inner">
-        <div class="section-tag">Experience</div>
-        <h2 class="section-title">Work History</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <span class="tl-year">2016 — 2018</span>
+      <!-- #Seccion 4 -->
+      <section id="section4">
+        <!-- Titulo -->
+        <h2 class="title" id="section4-title">Work History</h2>
+        <!-- Container -->
+        <ol class="timeline" reversed>
+          <!-- Item -->
+          <li class="timeline-item">
+            <!-- Contenido -->
+            <article class="tl-content">
+              <!-- Titulo -->
+              <time class="tl-year" datetime="2024">Present</time>
+              <!-- Subtitulo -->
               <h3>Fullstack Developer</h3>
+              <!-- Titulo 2 -->
               <p class="tl-company">Corsoft</p>
+              <!-- Descripcion -->
               <p>
-                Multi-skilled work in a management software company, with a focus on technological modernization. Migration of web applications from PHP to Python/Django,
-                development of internal tools and maintenance of legacy systems (THEOS, Velneo). Troubleshooting in Linux environments and technical documentation.
+                Software development and technological modernisation at a business management software company. Primary focus on migrating web applications from PHP to
+                Python/Django and building new projects using Django and PostgreSQL. Additional responsibilities include Linux system administration, internal tooling development,
+                and direct client interaction to identify operational needs and deliver tailored technical solutions.
               </p>
-            </div>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <!-- #Seccion 5 -->
+      <section class="section portfolio" id="section5">
+        <!-- Titulo  -->
+        <h2 class="title" id="projects-title">Personal Projects</h2>
+        <!-- Grid -->
+        <ul class="portfolio-grid">
+          <!-- Item -->
+          <li class="portfolio-card">
+            <article>
+              <!-- Img -->
+              <div class="portfolio-img"></div>
+              <div class="portfolio-info">
+                <!-- Titulo -->
+                <span class="portfolio-cat">Games</span>
+                <!-- Descripcion -->
+                <h3>Description</h3>
+              </div>
+            </article>
+          </li>
+          <!-- Item -->
+          <li class="portfolio-card">
+            <article>
+              <!-- Img -->
+              <div class="portfolio-img"></div>
+              <div class="portfolio-info">
+                <!-- Titulo -->
+                <span class="portfolio-cat">Games</span>
+                <!-- Descripcion -->
+                <h3>Description</h3>
+              </div>
+            </article>
+          </li>
+          <!-- Item -->
+          <li class="portfolio-card">
+            <article>
+              <!-- Img -->
+              <div class="portfolio-img"></div>
+              <div class="portfolio-info">
+                <!-- Titulo -->
+                <span class="portfolio-cat">Games</span>
+                <!-- Descripcion -->
+                <h3>Description</h3>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- #Seccion 6 -->
+      <section id="section6">
+        <!-- Titulo -->
+        <h2 class="title" id="contact-title">Let's Work Together</h2>
+        <!-- Contenedor -->
+
+        <!-- Formulario -->
+        <form class="contact-form" action="#" method="post" novalidate>
+          <!-- Linea del formulario -->
+          <div class="form-row">
+            <label for="name" class="visually-hidden">Your Name</label>
+            <input id="name" type="text" name="name" placeholder="Your Name" autocomplete="name" required />
+
+            <label for="email" class="visually-hidden">Your Email</label>
+            <input id="email" type="email" name="email" placeholder="Your Email" autocomplete="email" required />
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- PORTFOLIO -->
+          <label for="subject" class="visually-hidden">Subject</label>
+          <input id="subject" type="text" name="subject" placeholder="Subject" required />
 
-    <section class="section portfolio" id="portfolio">
-      <div class="section-inner">
-        <div class="section-tag">Portfolio</div>
-        <h2 class="section-title">Personal Projects</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-card" id="btnAbrir">
-            <div class="portfolio-img" style="background: #1a2a3a"></div>
-            <div class="portfolio-info">
-              <span class="portfolio-cat">Mobile App</span>
-              <h3>Finance Dashboard</h3>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-img" style="background: #1a3a2a"></div>
-            <div class="portfolio-info">
-              <span class="portfolio-cat">Web Design</span>
-              <h3>E-Commerce Platform</h3>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-img" style="background: #2a1a3a"></div>
-            <div class="portfolio-info">
-              <span class="portfolio-cat">Brand Identity</span>
-              <h3>Startup Branding</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <label for="message" class="visually-hidden">Your Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="section-inner">
-        <div class="section-tag">Contact</div>
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="contact-layout">
-          <form class="contact-form" onsubmit="return false;">
-            <div class="form-row">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-            </div>
-            <input type="text" placeholder="Subject" class="full" />
-            <textarea placeholder="Your Message" rows="5"></textarea>
-            <button type="submit" class="btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
+          <!-- Botón -->
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </section>
+    </main>
 
-    <dialog id="miModal">
-      <div class="modal-header">
-        <span>Ventana Externa</span>
-        <button id="btnCerrar">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        <iframe src="game-container.html" frameborder="0"></iframe>
-      </div>
-    </dialog>
-
-    <!-- FOOTER -->
-    <footer class="footer"></footer>
+    <!-- Footer importado de components.js -->
+    <m-footer></m-footer>
 
     <script src="JS/components.js"></script>
-    <script src="JS/modal-controller.js"></script>
   </body>
 </html>

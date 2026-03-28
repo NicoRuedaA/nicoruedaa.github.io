@@ -1,359 +1,273 @@
 /* =============================================
-   FUENTES CUSTOM
+   Variables
    ============================================= */
-@font-face {
-  font-family: "Monocraft";
-  src: url("../Fuentes/monocraft/Monocraft.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+.skill-10 {
+  --pct: 10%;
 }
-
-/* =============================================
-   RESET & BASE
-   ============================================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.skill-20 {
+  --pct: 20%;
+}
+.skill-30 {
+  --pct: 30%;
+}
+.skill-40 {
+  --pct: 40%;
+}
+.skill-50 {
+  --pct: 50%;
+}
+.skill-60 {
+  --pct: 60%;
+}
+.skill-70 {
+  --pct: 70%;
+}
+.skill-80 {
+  --pct: 80%;
+}
+.skill-90 {
+  --pct: 90%;
+}
+.skill-100 {
+  --pct: 100%;
 }
 
 :root {
   --bg: #011146;
   --bg2: #000000;
-  --surface: #1e1e1e;
+  --black: #1e1e1e;
   --border: #2a2a2a;
-  --teal: #2ec4b6;
   --white: #f0f0f0;
-  --muted: #999999;
+  --time: 0.3s ease;
+}
 
-  --font-head: "Monocraft", monospace;
-  --font-body: "Monocraft", monospace;
-  --radius: 12px;
-  --transition: 0.3s ease;
+/* =============================================
+   Fuente
+   ============================================= */
+@font-face {
+  font-family: "Monocraft";
+  src: url("../Fuentes/monocraft/Monocraft.ttf") format("truetype");
+}
+
+/* =============================================
+   Base
+   ============================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Monocraft", monospace;
+  text-align: center;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: "Monocraft", monospace;
+  background: var(--bg2);
+  color: var(--white);
+  font-size: 100%; /* Para usar rem en vez de px */
 }
 
 body {
-  background: var(--bg2);
-  color: var(--white);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 0.94rem;
+  line-height: 1.7; /* altura de la linea es 1.7 veces la original */
   overflow-x: hidden;
+  margin-bottom: 60px; /* Margen inferior al body para que el footer no tape el último texto */
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* para que texto con enlace no se modifique el aspecto*/
+  color: inherit; /* para que texto con enlace no se modifique el color*/
 }
 
-ul {
-  list-style: none;
-}
-
-img {
-  display: block;
-  width: 100%;
+li {
+  list-style-type: none; /* listas sin puntitos */
 }
 
 /* =============================================
-   SCROLLBAR
+   Scrollbar
    ============================================= */
+
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0.3rem; /*ancho de la scroll bar*/
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: var(--bg); /*fondo de la scrollbar*/
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--teal);
-  border-radius: 4px;
+  background: var(--white); /*cuadradito de la scrollbar*/
+  border-radius: 1rem;
 }
 
 /* =============================================
-   WEB COMPONENTS
+   Secciones
    ============================================= */
-m-header,
-m-footer {
-  width: 100%;
-  flex-shrink: 0;
-}
 
-/* =============================================
-   HERO
-   ============================================= */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  gap: 3rem;
-  position: relative;
-  overflow: hidden;
-  flex-direction: column-reverse;
-  text-align: center;
-  align-items: center;
-  padding: 7rem 5% 4rem;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  right: 20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(46, 196, 182, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-content {
-  max-width: 520px;
-  animation: fadeUp 0.8s ease both;
-}
-
-.hero-name {
-  font-family: var(--font-head);
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--white);
-  margin-bottom: 0.4rem;
-}
-
-.hero-title {
-  font-family: var(--font-head);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--muted);
-  margin-bottom: 1.6rem;
-  letter-spacing: 0.04em;
-}
-
-.hero-subtitle {
-  font-size: 0.95rem;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-}
-
-/* ---- Hero Image ---- */
-.hero-image-wrap {
-  position: relative;
-  flex-shrink: 0;
-  animation: fadeUp 0.8s 0.2s ease both;
-}
-
-.image-ring {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  border: 2px solid var(--teal);
-  padding: 10px;
-  position: relative;
-}
-
-.image-ring::before {
-  content: "";
-  position: absolute;
-  inset: -14px;
-  border-radius: 50%;
-  border: 2px dashed var(--teal);
-  animation: spin 14s linear infinite;
-}
-
-.image-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.image-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(15%);
-  transition: filter 0.5s;
-}
-.image-ring:hover .image-circle img {
-  filter: grayscale(0%);
-}
-
-.floating-badge {
-  position: absolute;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--teal);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  padding: 0.45rem 1rem;
-  border-radius: 100px;
-  animation: float 3.5s ease-in-out infinite;
-}
-.badge-1 {
-  top: 10%;
-  right: -20px;
-}
-
-/* =============================================
-   BUTTONS
-   ============================================= */
-.btn-primary {
-  display: inline-block;
-  background: var(--teal);
-  color: var(--bg2);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  padding: 0.75rem 1.8rem;
-  border-radius: 100px;
-  border: 2px solid var(--teal);
-  transition: all var(--transition);
-  cursor: pointer;
-}
-.btn-primary:hover {
-  background: transparent;
-  color: var(--teal);
-}
-
-/* =============================================
-   SECTIONS (shared)
-   ============================================= */
-.section {
+section {
+  scroll-margin-top: 6.25rem; /* antes: 100px */
   padding: 6rem 8%;
-  border-top: 1px solid var(--border);
+  border-top: 0.0625rem solid var(--border); /* antes: 1px */
+
+  min-height: 100vh; /* cada seccion ocupa el tamaño vertical completo*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
 }
 
-.section:nth-child(even) {
+section:nth-child(even) {
   background: var(--bg2);
 }
-
-.section:nth-child(odd) {
+section:nth-child(odd) {
   background: var(--bg);
 }
 
-.section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
+.title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem); /*tamaño de la fuente se adapta entre un rango. Min, pref, max*/
+  font-weight: 800; /*grosor de la fuente*/
+  letter-spacing: -0.02em; /*espaciado entre lineas*/
+  margin-bottom: 2.5rem; /*margen*/
 }
 
-.section-tag {
-  display: inline-block;
-  font-family: var(--font-head);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal);
-  background: rgba(46, 196, 182, 0.08);
-  border: 1px solid rgba(46, 196, 182, 0.25);
-  padding: 0.3rem 0.9rem;
-  border-radius: 100px;
-  margin-bottom: 1rem;
-}
-
-.section-title {
-  font-family: var(--font-head);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 2.5rem;
-  color: var(--white);
-}
-
-/* =============================================
-   ABOUT
-   ============================================= */
-.about-text {
+.description {
   max-width: 620px;
   margin: 0 auto 2.5rem;
-  color: var(--muted);
   font-size: 1rem;
   line-height: 1.8;
 }
 
 /* =============================================
-   SKILLS
+   Me (header personal)
    ============================================= */
+.me {
+  display: flex; /*flex*/
+  flex-direction: column; /*Direccion vertical*/
+  align-items: center;
+  padding: 7rem 5% 4rem;
+  overflow: hidden;
+  gap: 3rem;
+}
+
+.me-name {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.me-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.04em;
+}
+.me-subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Imagen ---- */
+
+/*animacion rayitas */
+/* borde alrededor de la imagen */
+.image-ring {
+  width: 20rem; /* antes: 320px */
+  height: 20rem; /* antes: 320px */
+  border-radius: 100%;
+  border: 0.0625rem solid var(--white); /* antes: 1px */
+  padding: 0.625rem; /* antes: 10px */
+  position: relative;
+}
+/*efecto */
+.image-ring::before {
+  content: ""; /*string */
+  position: absolute;
+  inset: -0.875rem; /* antes: -14px */
+  border-radius: 50%; /* forma circular*/
+  border: 0.125rem dashed var(--white); /* antes: 2px */
+  animation: spin 120s linear infinite; /* giro en 360 tiempo infinito */
+}
+
+.image-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* forma circular  */
+  overflow: hidden; /* lo que sobresale no se muestra  */
+}
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+}
+
+/* =============================================
+   Boton
+   ============================================= */
+.btn-primary {
+  background: var(--white);
+
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1.8rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--time);
+}
+.btn-primary:hover {
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+/* =============================================
+   Who I am
+   ============================================= */
+
+/* =============================================
+   Technologies
+   ============================================= */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1.5rem;
+  align-self: stretch;
 }
 
 .skill-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: var(--black);
+  border: 0.0625rem solid var(--border); /* antes: 1px */
+
   padding: 1.75rem 1.5rem;
   transition:
-    border-color var(--transition),
-    transform var(--transition);
+    border-color var(--time),
+    transform var(--time);
 }
 .skill-card:hover {
-  border-color: var(--teal);
-  transform: translateY(-4px);
-}
-
-.skill-icon {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(46, 196, 182, 0.1);
-  border-radius: 10px;
-  color: var(--teal);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.skill-card h3 {
-  font-family: var(--font-head);
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
+  transform: translateY(-0.25rem); /* antes: -4px */
 }
 
 .skill-card p {
-  font-size: 0.82rem;
-  color: var(--muted);
   margin-bottom: 1.2rem;
 }
 
 .skill-bar {
-  height: 4px;
+  height: 0.25rem; /* antes: 4px */
+  border-radius: 0.25rem; /* antes: 4px */
   background: var(--border);
-  border-radius: 4px;
-  overflow: hidden;
   margin-bottom: 0.4rem;
+  width: 100%;
+  max-width: 12.5rem; /* antes: 200px */
 }
 .skill-fill {
   height: 100%;
   width: var(--pct);
-  background: var(--teal);
-  border-radius: 4px;
-  animation: growBar 1s ease both;
-}
-.skill-pct {
-  font-family: var(--font-head);
-  font-size: 0.78rem;
-  color: var(--teal);
-  font-weight: 700;
+  background: var(--white);
+  border-radius: 0.25rem; /* antes: 4px */
 }
 
 /* =============================================
-   EXPERIENCES / TIMELINE
+   Timeline
    ============================================= */
 .timeline {
   position: relative;
@@ -363,10 +277,10 @@ m-footer {
 .timeline::before {
   content: "";
   position: absolute;
-  left: 6px;
-  top: 8px;
+  left: 0.375rem; /* antes: 6px */
+  top: 0.5rem; /* antes: 8px */
   bottom: 0;
-  width: 2px;
+  width: 0.125rem; /* antes: 2px */
   background: var(--border);
 }
 
@@ -374,78 +288,55 @@ m-footer {
   position: relative;
   margin-bottom: 2.5rem;
 }
-.tl-dot {
-  position: absolute;
-  left: -1.85rem;
-  top: 6px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid var(--teal);
-  background: var(--bg);
-}
 
 .tl-year {
-  display: inline-block;
   font-size: 0.78rem;
-  color: var(--teal);
-  font-family: var(--font-head);
   font-weight: 700;
   letter-spacing: 0.06em;
   margin-bottom: 0.4rem;
 }
-
-.tl-content h3 {
-  font-family: var(--font-head);
+.tl-content {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
 }
-
 .tl-company {
-  color: var(--teal);
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
 }
-
 .tl-content p {
-  color: var(--muted);
   font-size: 0.88rem;
 }
 
 /* =============================================
-   PORTFOLIO
+   Portfolio
    ============================================= */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
   gap: 1.5rem;
+  justify-content: center; /* centra las columnas de ancho fijo */
+  /*width: 100%*/
 }
 
 .portfolio-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: var(--black);
+  border: 0.0625rem solid var(--border); /* antes: 1px */
+
   overflow: hidden;
   transition:
-    border-color var(--transition),
-    transform var(--transition);
+    border-color var(--time),
+    transform var(--time);
 }
 .portfolio-card:hover {
-  border-color: var(--teal);
-  transform: translateY(-4px);
+  transform: translateY(-0.25rem); /* antes: -4px */
 }
 
 .portfolio-img {
-  height: 200px;
+  height: 12.5rem; /* antes: 200px */
   position: relative;
   overflow: hidden;
-}
-.portfolio-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(46, 196, 182, 0.15), transparent);
+  background: var(--white);
 }
 
 .portfolio-info {
@@ -453,7 +344,7 @@ m-footer {
 }
 .portfolio-cat {
   font-size: 0.73rem;
-  color: var(--teal);
+
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -466,19 +357,16 @@ m-footer {
 }
 
 /* =============================================
-   CONTACT
+   Contact
    ============================================= */
-.contact-layout {
-  max-width: 700px;
-  margin: 0 auto;
-}
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
-
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -487,93 +375,97 @@ m-footer {
 
 .contact-form input,
 .contact-form textarea {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.85rem 1.1rem;
   color: var(--white);
-  font-family: inherit;
+  background: var(--black);
+  border: 0.0625rem solid var(--border); /* antes: 1px */
+  padding: 0.85rem 1.1rem;
   font-size: 0.88rem;
   width: 100%;
   outline: none;
-  transition: border-color var(--transition);
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--teal);
-}
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--muted);
-}
-.contact-form textarea {
-  resize: vertical;
+  transition: border-color var(--time);
 }
 
 /* =============================================
-   FOOTER
+   Animaciones
    ============================================= */
-.footer {
-  padding: 2rem 8%;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg);
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem); /* antes: 28px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.footer p {
-  font-size: 0.82rem;
-  color: var(--muted);
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.625rem); /* antes: -10px */
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--pct);
+  }
 }
 
 /* =============================================
    MODAL
    ============================================= */
+/*
 dialog {
   border: none;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   padding: 0;
   width: 80vw;
   height: 80vh;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
 }
-
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(0.1875rem);
 }
 
 .modal-body {
-  height: calc(100% - 50px);
+  height: calc(100% - 3.125rem);
   width: 100%;
 }
-
 .modal-body iframe {
   width: 100%;
   height: 100%;
   display: block;
 }
-
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   background: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
 }
-
 #btnCerrar {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
-}
+}*/
 
 /* =============================================
-   BACKGROUND IFRAME
+   Background iframe
    ============================================= */
+/*
 #fondo-aliens {
   position: absolute;
   inset: 0;
@@ -583,41 +475,27 @@ dialog::backdrop {
   z-index: -1;
 }
 
-/* =============================================
-   ANIMATIONS
-   ============================================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+
+*/
+/* Añade esto a tu style.css */
+m-footer footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black); /* O el color que prefieras */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  z-index: 9999;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes growBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: var(--pct);
-  }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
