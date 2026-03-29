@@ -8,49 +8,45 @@
     <!-- Logos chu-chu-chulos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/headerFooter.css" />
     <!-- Logos chu-chu-chulos -->
     <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
   </head>
 
   <body>
-    <!-- <iframe id="fondo-aliens" src="background.html" title="Fondo animado decorativo"></iframe> -->
     <!-- Nav importado de components.js -->
-
     <m-header></m-header>
 
     <main>
-      <section class="project-detail" id="detail-section">
-        <div class="detail-container">
-          <figure class="detail-image-box">
-            <img src="img/tu-imagen-proyecto.jpg" alt="Captura del proyecto" class="detail-img" />
-          </figure>
-
-          <article class="detail-info">
-            <span class="detail-category">Tipo de proyecto</span>
-
-            <h1 class="detail-title">Título del proyecto</h1>
-
-            <p class="detail-price"><i class="fa-solid fa-clock"></i> Horas de desarrollo</p>
-
-            <div class="detail-description">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit arcu morbi volutpat nunc pretium, nascetur a blandit egestas viverra vulputate tristique varius neque
-                parturient fusce. Est porttitor cras per netus fusce nisi tellus, pharetra volutpat quam praesent aliquam ligula non sagittis, ut sapien sodales id placerat luctus.
-                Gravida nullam montes rutrum nunc dui praesent nibh placerat condimentum non, cubilia vehicula diam cursus lacinia maecenas torquent venenatis quam.
-              </p>
-            </div>
-
-            <div class="detail-actions">
-              <button class="btn-primary" id="btn-add-favorite"><i class="fa-solid fa-heart"></i> Guardar en Favoritos</button>
-              <a href="index.html#section5" class="btn-secondary"> <i class="fa-solid fa-arrow-left"></i> Volver a Proyectos </a>
-            </div>
-          </article>
-        </div>
-        <iframe src="game-container.html" title="Juego"></iframe>
+      <!-- Container de productos -->
+      <section class="section products" id="products-container">
+        <!-- Producto -->
+        <article class="article product" id="product-container">
+          <!-- Imagen del producto -->
+          <img src="img/enconstruccion.gif" alt="Imagen del Proyecto" />
+          <!-- Categoría del producto -->
+          <p class="product-category">Categoría del proyecto</p>
+          <!-- Titulo del producto -->
+          <h1 class="product-title">Título del proyecto</h1>
+          <!-- Descripción del producto -->
+          <p class="product-description">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit arcu morbi volutpat nunc pretium, nascetur a blandit egestas viverra vulputate tristique varius neque parturient
+            fusce. Est porttitor cras per netus fusce nisi tellus, pharetra volutpat quam praesent aliquam ligula non sagittis, ut sapien sodales id placerat luctus. Gravida nullam
+            montes rutrum nunc dui praesent nibh placerat condimentum non, cubilia vehicula diam cursus lacinia maecenas torquent venenatis quam.
+          </p>
+          <!-- Añadir producto a favoritos -->
+          <div class="product-buttons">
+            <button onclick="favAdded()" class="btn-add-favorite" id="btn-add-favorite"><i class="fa-solid fa-heart"></i> Guardar en Favoritos</button>
+          </div>
+          <!-- Producto interactivo -->
+          <div class="product-preview">
+            <iframe src="game-container.html"></iframe>
+          </div>
+        </article>
+        <!-- Botón para volver a inicio -->
+        <a href="index.html"><button class="btn-return" id="btn-return">Return</button></a>
       </section>
     </main>
-
-    <section></section>
 
     <!-- Footer importado de components.js -->
     <m-footer></m-footer>

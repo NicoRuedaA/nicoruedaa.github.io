@@ -1,0 +1,35 @@
+web/
+│
+├── CNAME                     # Documentos para Git Pages
+├── index.html                     # Página principal
+│   └── product.html               # Página a la que se accede al hacer clic en un producto
+│   └── contacted.html             # Página que se muestra tras rellenar el formulario
+├── favs.html                      # Página a la que lleva el icono de la estrella
+├── login.html                     # Página a la que lleva el icono de login
+├── game-container.html            # Contenedor con todos los juegos y el menú
+│   └── game-selector.html         # Contenedor con el menú de selección
+│       ├── game-catpire.html      # Contenedor del juego «Catpire»
+│       └── game-sapo.html         # Contenedor del juego del sapo
+├── decks.html                     # No implementado
+├── background.html                # Contenedor que dibuja los aliens del fondo
+│
+├── 📁 juegos/                     # Carpeta donde se almacenan todos los juegos
+│   ├── 📁 catpire/                # Juego «Catpire» y todas sus dependencias
+│   │   └── index.html             # Juego «Catpire» propiamente dicho
+│   └── 📁 sapoGuvasto/            # Juego del sapo y todas sus dependencias
+│       └── index.html             # Juego del sapo propiamente dicho
+│
+├── 📁 js/                         # Carpeta donde se almacenan todos los archivos JavaScript
+│   ├── components.js              # Define m-header y m-footer como componentes web
+│   │                              #   para no tener que modificarlos en cada HTML
+│   ├── favs.js                    # Lógica de favs.html
+│   ├── modal-controller.js        # No implementado
+│   └── switch.js                  # Lógica visual de la consola
+│                                  #   (joysticks que se mueven, botones que se pulsan…)
+├── 📁 CSS/                        # Carpeta donde se almacenan todos los archivos CSS
+│   ├── style.css                  # Estilos generales de las páginas
+│   ├── headerFooter.css           # Estilos del header y footer comunes a todas las páginas
+│   ├── switch-container.css       # Estilos visuales de la consola
+│   └── decks.css                  # No implementado
+├── 📁 IMG/                        # Carpeta donde se almacenan las imágenes
+├── 📁 Fuentes/                    # Carpeta donde se almacenan las fuentes tipográficas

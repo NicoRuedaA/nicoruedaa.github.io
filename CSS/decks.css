@@ -1,25 +1,24 @@
-:root {
-  /* =========================================
-     VARIABLES GLOBALES DE CONFIGURACIÓN VISUAL
+/* =========================================
+     VARIABLES GLOBALES 
      ========================================= */
 
+:root {
   /* Medidas de las cartas */
   --card-width: 150px;
   --card-aspect-ratio: 2 / 3;
 
-  /* Configuración del arco */
+  /* Variables del arco */
   --card-angle: 12deg; /* Ángulo de separación entre cada carta */
-  --arc-radius: 100px; /* Radio/curvatura inicial hacia abajo */
-  --arc-offset: -150px; /* Ajuste vertical para subir el arco completo */
-  --deck-gap: 150px; /* Distancia vertical entre cada mazo/arco */
+  --arc-radius: 100px; /* Radio inicial hacia abajo */
+  --arc-offset: -150px; /* Ajuste vertical */
+  --deck-gap: 150px; /* Distancia vertical entre cada mazo */
 
-  /* Eje central para el cálculo matemático (Para 10 cartas = 4.5) 
-     Fórmula: (Total de cartas / 2) - 0.5 */
+  /* cálculo (Total de cartas / 2) - 0.5 */
   --center-offset: 4.5;
 
-  /* Efectos Hover (al pasar el ratón) */
-  --hover-scale: 1.2; /* Escala/aumento de tamaño al hacer hover */
-  --hover-lift: -40%; /* Elevación de la carta al hacer hover */
+  /* Hover  */
+  --hover-scale: 1.2; /* Escala */
+  --hover-lift: -40%; /* Elevación */
 }
 
 .wrapper-container {
@@ -28,7 +27,7 @@
   align-items: center;
   width: 100%;
   padding: 100px 20px 200px 20px;
-  gap: var(--deck-gap); /* Usando variable global */
+  gap: var(--deck-gap);
 }
 
 .wrapper {
@@ -43,10 +42,9 @@
 
 .wrapper li {
   position: absolute;
-  width: var(--card-width); /* Usando variable global */
-  aspect-ratio: var(--card-aspect-ratio); /* Usando variable global */
+  width: var(--card-width);
+  aspect-ratio: var(--card-aspect-ratio);
 
-  /* Transformación con variables */
   transform: translateY(var(--arc-radius)) rotate(calc((var(--i) - var(--center-offset)) * var(--card-angle))) translateY(var(--arc-offset));
 
   transition: transform 0.3s ease;

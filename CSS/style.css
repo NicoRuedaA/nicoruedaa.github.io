@@ -91,10 +91,10 @@ li {
   width: 0.3rem; /*ancho de la scroll bar*/
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg); /*fondo de la scrollbar*/
+  background: #da850f; /*fondo de la scrollbar*/
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--white); /*cuadradito de la scrollbar*/
+  background: var(--black); /*cuadradito de la scrollbar*/
   border-radius: 1rem;
 }
 
@@ -103,7 +103,7 @@ li {
    ============================================= */
 
 section {
-  scroll-margin-top: 6.25rem; /* antes: 100px */
+  scroll-margin-top: 3.25rem; /* antes: 100px */
   padding: 6rem 8%;
   border-top: 0.0625rem solid var(--border); /* antes: 1px */
 
@@ -111,7 +111,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center; /* centra verticalmente */
-  align-items: center; /* centra horizontalmente */
+  align-items: stretch;
+  position: relative;
 }
 
 section:nth-child(even) {
@@ -202,7 +203,7 @@ section:nth-child(odd) {
 /* =============================================
    Boton
    ============================================= */
-.btn-primary {
+button {
   background: var(--white);
 
   font-weight: 700;
@@ -213,7 +214,7 @@ section:nth-child(odd) {
   cursor: pointer;
   transition: all var(--time);
 }
-.btn-primary:hover {
+button:hover {
   background: transparent;
   border: 1px solid var(--white);
   color: var(--white);
@@ -229,9 +230,10 @@ section:nth-child(odd) {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, 230px);
+  justify-content: center;
   gap: 1.5rem;
-  align-self: stretch;
+  width: 100%; /* 👈 ESTA ES LA CLAVE */
 }
 
 .skill-card {
@@ -313,10 +315,10 @@ section:nth-child(odd) {
    ============================================= */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
   gap: 1.5rem;
-  justify-content: center; /* centra las columnas de ancho fijo */
-  /*width: 100%*/
+  width: 100%;
 }
 
 .portfolio-card {
@@ -385,6 +387,31 @@ section:nth-child(odd) {
   transition: border-color var(--time);
 }
 
+/* Sección con fondo relativo para contener el iframe */
+.me {
+  position: relative; /* ← necesario para que el iframe se posicione dentro */
+}
+
+/* Iframe como fondo */
+.section-bg {
+  position: absolute;
+  inset: 0; /* equivale a top:0; left:0; right:0; bottom:0 */
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 0;
+  pointer-events: none; /* el fondo no intercepta clics */
+}
+
+section > *:not(.section-bg) {
+  position: relative;
+  z-index: 1; /* 👈 contenido */
+}
+
+textarea {
+  resize: none;
+}
+
 /* =============================================
    Animaciones
    ============================================= */
@@ -419,83 +446,4 @@ section:nth-child(odd) {
   to {
     width: var(--pct);
   }
-}
-
-/* =============================================
-   MODAL
-   ============================================= */
-/*
-dialog {
-  border: none;
-  border-radius: 0.75rem;
-  padding: 0;
-  width: 80vw;
-  height: 80vh;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
-}
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(0.1875rem);
-}
-
-.modal-body {
-  height: calc(100% - 3.125rem);
-  width: 100%;
-}
-.modal-body iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.625rem 1.25rem;
-  background: #f4f4f4;
-  border-bottom: 0.0625rem solid #ddd;
-}
-#btnCerrar {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}*/
-
-/* =============================================
-   Background iframe
-   ============================================= */
-/*
-#fondo-aliens {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  z-index: -1;
-}
-
-
-
-*/
-/* Añade esto a tu style.css */
-m-footer footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--black); /* O el color que prefieras */
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  z-index: 9999;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
 }

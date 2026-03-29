@@ -8,30 +8,25 @@
     <!-- Logos chu-chu-chulos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/headerFooter.css" />
     <!-- Logos chu-chu-chulos -->
     <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
   </head>
 
   <body>
-    <!-- <iframe id="fondo-aliens" src="background.html" title="Fondo animado decorativo"></iframe> -->
     <!-- Nav importado de components.js -->
-
     <m-header></m-header>
 
-    <main></main>
-
-    <section>
-      <div class="login-wrapper">
-        <div class="login-card">
-          <h1><i class="fa-solid fa-user"></i> Login</h1>
-
-          <div class="session-status" id="sessionStatus">
-            <i class="fa-solid fa-circle-check"></i> Logged as...
-            <strong id="sessionUsername"></strong>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main>
+      <section class="section login" id="section-login">
+        <!-- Title -->
+        <h1 class="title login" id="title-login"><i class="fa-solid fa-user"></i> Login</h1>
+        <!-- Description -->
+        <p class="description login" id="description-login"><i class="fa-solid fa-circle-check"></i> Logged as...</p>
+        <!-- Return Button -->
+        <a href="index.html"><button class="btn-return" id="btn-return">Return</button></a>
+      </section>
+    </main>
 
     <!-- Footer importado de components.js -->
     <m-footer></m-footer>

@@ -8,24 +8,17 @@
     <style>
       :root {
         --invader-color: #2f385c;
-        --pixel-size: 5px; /* Ajusta el tamaño aquí */
-
-        /* Definimos el tamaño total del alien en variables para que JS pueda leerlo si quisiera,
-                o simplemente para mantener el orden.
-                Alien ancho = 11 píxeles * tamaño pixel
-                Alien alto = 8 píxeles * tamaño pixel
-             */
+        --pixel-size: 5px;
       }
 
       body {
         background-color: #2f385c77;
         margin: 0;
         height: 100vh;
-        overflow: hidden; /* Evitamos barras de scroll */
+        overflow: hidden;
 
-        /* CONFIGURACIÓN DE LA REJILLA */
         display: grid;
-        /* Rellena columnas de mínimo 80px (ajustable según el zoom) */
+
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
         gap: 10px;
@@ -33,7 +26,6 @@
         align-items: center;
       }
 
-      /* TU CÓDIGO DEL ALIEN (INTACTO) */
       .space-invader {
         position: relative;
         width: calc(11 * var(--pixel-size));
@@ -103,26 +95,18 @@
       function fillScreenWithInvaders() {
         const body = document.body;
 
-        // Limpiamos el body por si redimensionamos la pantalla
         body.innerHTML = "";
 
-        // 1. Calculamos el área de la pantalla
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
 
-        // 2. Definimos cuánto ocupa aprox un alien (ancho + gap)
-        // En el CSS pusimos minmax(80px, ...), así que usaremos 80x60 como base de celda
         const cellWidth = 80;
         const cellHeight = 60;
 
-        // 3. Calculamos cuántos caben (Columnas * Filas)
         const cols = Math.ceil(screenWidth / cellWidth);
         const rows = Math.ceil(screenHeight / cellHeight);
         const totalInvaders = cols * rows;
 
-        // 4. Creamos un "Fragmento".
-        // Esto es un truco PRO: En lugar de pegar los divs uno a uno (que es lento),
-        // los pegamos todos en memoria y luego los lanzamos al body de golpe.
         const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < totalInvaders; i++) {
@@ -131,17 +115,13 @@
           fragment.appendChild(div);
         }
 
-        // 5. Inyectamos todo de golpe
         body.appendChild(fragment);
 
         console.log(`Se han generado ${totalInvaders} aliens.`);
       }
 
-      // Ejecutar al cargar
       fillScreenWithInvaders();
 
-      // Opcional: Recalcular si el usuario cambia el tamaño de la ventana
-      // (Usamos un pequeño timeout para que no se ejecute mil veces mientras arrastras)
       let resizeTimer;
       window.addEventListener("resize", () => {
         clearTimeout(resizeTimer);

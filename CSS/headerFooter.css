@@ -1,0 +1,118 @@
+:root {
+  --black: #1e1e1e;
+  --white: #f0f0f0;
+}
+
+.topBar,
+.botBar {
+  position: fixed; /* la barra siempre visible*/
+  left: 0;
+  width: 100%; /*  ocupa todo el acho */
+  background-color: var(--black);
+  color: var(--white);
+  display: flex; /*  flexbox para separarlo en 3 elemetos */
+  align-items: center;
+  z-index: 9999; /*  siempre encima */
+  padding: 0.8rem 2rem; /*  margen interior */
+}
+.topBar {
+  top: 0; /*  pegada */
+}
+
+.botBar {
+  bottom: 0; /*  pegada */
+}
+
+/* Logo a la izquierda */
+.topBar > .logo {
+  flex: 1;
+  /*  Borrar cuando se ponga un img */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Nav centrado */
+.topBar > .nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 1rem;
+}
+
+/* Links sin subrayado ni cambio de colores raros*/
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+}
+
+/* Cambio visual al dejar el botón ecima */
+.nav-links a:hover {
+  background-color: #da850f;
+  color: black;
+}
+
+/* Login a la derecha */
+.topBar > .login {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.login input {
+  padding: 0.3rem 0.5rem;
+}
+
+/* Dropdown básico */
+.dropdown {
+  position: relative; /* Si no, se ve separado */
+}
+
+/* "Botón" */
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+}
+
+/* Contenido del dropdown */
+.dropdown-content {
+  display: none; /* oculto por defecto */
+  position: absolute;
+  top: 100%; /* debajo del botón */
+  left: 0;
+  min-width: 180px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.2s ease; /* transición opcional */
+}
+
+/* Enlaces dentro del dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostrar contenido al pasar el ratón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}

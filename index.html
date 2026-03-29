@@ -8,12 +8,12 @@
     <!-- Logos chu-chu-chulos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/headerFooter.css" />
     <!-- Logos chu-chu-chulos -->
     <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
   </head>
 
   <body>
-    <!-- <iframe id="fondo-aliens" src="background.html" title="Fondo animado decorativo"></iframe> -->
     <!-- Nav importado de components.js -->
 
     <m-header></m-header>
@@ -22,6 +22,7 @@
       <!-- #Seccion 1 -->
       <section class="me" id="section1">
         <!-- Fondo importado de background.html+background.css -->
+        <iframe class="section-bg" src="background.html" title="Fondo decorativo" aria-hidden="true" tabindex="-1"></iframe>
 
         <!-- Efectos alrededor de la imagen -->
         <div class="image-ring">
@@ -32,9 +33,11 @@
         </div>
 
         <div>
-          <!-- Titulo -->
+          <!-- Mi nombre -->
           <h1 class="me-name">Nico Rueda</h1>
+          <!-- Titulo -->
           <h2 class="me-title">Game Designer &amp; Multiplatform Developer</h2>
+          <!-- Subtitulo -->
           <p class="me-subtitle">
             Crafting experiences. <br />
             Building solutions.
@@ -43,17 +46,24 @@
       </section>
 
       <!-- #Seccion 2 -->
-      <section id="section2">
+      <section class="section about-me" id="section2">
         <!-- Titulo -->
         <h2 class="title" id="section2-title">Who I Am</h2>
         <!-- Descripción -->
-        <p class="description" id="section2-description">Multiplatform Application Development student with background in Video Game Design, Web Development, and Databases.</p>
+        <p class="description" id="section2-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </section>
 
       <!-- #Seccion 3 -->
-      <section id="section3">
+      <section class="section skills" id="section3">
+        <!-- Fondo importado de background.html+background.css -->
+        <iframe class="section-bg" src="background.html" title="Fondo decorativo" aria-hidden="true" tabindex="-1"></iframe>
+
         <!-- Titulo -->
-        <h2 class="title" id="section3-title">Skill</h2>
+        <h2 class="title" id="section3-title">Skills</h2>
         <!-- Grid -->
         <ul class="skills-grid">
           <!-- Item -->
@@ -64,6 +74,7 @@
             <p>Description.</p>
             <!-- Barra -->
             <div class="skill-bar">
+              <!-- % completado -->
               <div class="skill-fill skill-70"></div>
             </div>
             <!-- Texto -->
@@ -77,10 +88,11 @@
             <p>Description.</p>
             <!-- Barra -->
             <div class="skill-bar">
-              <div class="skill-fill skill-70"></div>
+              <!-- % completado -->
+              <div class="skill-fill skill-20"></div>
             </div>
             <!-- Texto -->
-            <span class="skill-pct">70%</span>
+            <span class="skill-pct">20%</span>
           </li>
           <!-- Item -->
           <li class="skill-card">
@@ -90,10 +102,11 @@
             <p>Description.</p>
             <!-- Barra -->
             <div class="skill-bar">
-              <div class="skill-fill skill-70"></div>
+              <!-- % completado -->
+              <div class="skill-fill skill-50"></div>
             </div>
             <!-- Texto -->
-            <span class="skill-pct">70%</span>
+            <span class="skill-pct">50%</span>
           </li>
           <!-- Item -->
           <li class="skill-card">
@@ -103,18 +116,19 @@
             <p>Description.</p>
             <!-- Barra -->
             <div class="skill-bar">
-              <div class="skill-fill skill-70"></div>
+              <!-- % completado -->
+              <div class="skill-fill skill-40"></div>
             </div>
             <!-- Texto -->
-            <span class="skill-pct">70%</span>
+            <span class="skill-pct">40%</span>
           </li>
         </ul>
       </section>
 
       <!-- #Seccion 4 -->
-      <section id="section4">
+      <section class="section jobs" id="section4">
         <!-- Titulo -->
-        <h2 class="title" id="section4-title">Work History</h2>
+        <h2 class="title" id="section4-title">Professional Experience</h2>
         <!-- Container -->
         <ol class="timeline" reversed>
           <!-- Item -->
@@ -140,73 +154,86 @@
 
       <!-- #Seccion 5 -->
       <section class="section portfolio" id="section5">
+        <!-- Fondo importado de background.html+background.css -->
+        <iframe class="section-bg" src="background.html" title="Fondo decorativo" aria-hidden="true" tabindex="-1"></iframe>
+
         <!-- Titulo  -->
         <h2 class="title" id="projects-title">Personal Projects</h2>
         <!-- Grid -->
         <ul class="portfolio-grid">
           <!-- Item -->
           <li class="portfolio-card">
-            <article>
-              <!-- Img -->
-              <div class="portfolio-img"></div>
-              <div class="portfolio-info">
-                <!-- Titulo -->
-                <span class="portfolio-cat">Games</span>
-                <!-- Descripcion -->
-                <h3>Description</h3>
-              </div>
-            </article>
+            <!-- Href -->
+            <a href="product.html">
+              <article>
+                <!-- Img -->
+                <div class="portfolio-img"></div>
+                <!-- Texto -->
+                <div class="portfolio-info">
+                  <!-- Titulo -->
+                  <span class="portfolio-cat">Games</span>
+                  <!-- Descripcion -->
+                  <h3>Description</h3>
+                </div>
+              </article>
+            </a>
           </li>
           <!-- Item -->
           <li class="portfolio-card">
-            <article>
-              <!-- Img -->
-              <div class="portfolio-img"></div>
-              <div class="portfolio-info">
-                <!-- Titulo -->
-                <span class="portfolio-cat">Games</span>
-                <!-- Descripcion -->
-                <h3>Description</h3>
-              </div>
-            </article>
+            <!-- Href -->
+            <a href="product.html">
+              <article>
+                <!-- Img -->
+                <div class="portfolio-img"></div>
+                <!-- Texto -->
+                <div class="portfolio-info">
+                  <!-- Titulo -->
+                  <span class="portfolio-cat">Games</span>
+                  <!-- Descripcion -->
+                  <h3>Description</h3>
+                </div>
+              </article>
+            </a>
           </li>
           <!-- Item -->
           <li class="portfolio-card">
-            <article>
-              <!-- Img -->
-              <div class="portfolio-img"></div>
-              <div class="portfolio-info">
-                <!-- Titulo -->
-                <span class="portfolio-cat">Games</span>
-                <!-- Descripcion -->
-                <h3>Description</h3>
-              </div>
-            </article>
+            <!-- Href -->
+            <a href="product.html">
+              <article>
+                <!-- Img -->
+                <div class="portfolio-img"></div>
+                <!-- Texto -->
+                <div class="portfolio-info">
+                  <!-- Titulo -->
+                  <span class="portfolio-cat">Games</span>
+                  <!-- Descripcion -->
+                  <h3>Description</h3>
+                </div>
+              </article>
+            </a>
           </li>
         </ul>
       </section>
 
       <!-- #Seccion 6 -->
-      <section id="section6">
+      <section class="section contact" id="section6">
         <!-- Titulo -->
         <h2 class="title" id="contact-title">Let's Work Together</h2>
         <!-- Contenedor -->
 
         <!-- Formulario -->
-        <form class="contact-form" action="#" method="post" novalidate>
-          <!-- Linea del formulario -->
+        <form class="contact-form" action="contacted.html" method="post" novalidate>
+          <!-- subgrid (fila) del formulario -->
+          <!-- your name + your email en la misma fila -->
           <div class="form-row">
-            <label for="name" class="visually-hidden">Your Name</label>
-            <input id="name" type="text" name="name" placeholder="Your Name" autocomplete="name" required />
-
-            <label for="email" class="visually-hidden">Your Email</label>
-            <input id="email" type="email" name="email" placeholder="Your Email" autocomplete="email" required />
+            <!-- Text input -->
+            <input id="name" type="text" name="name" placeholder="Your Name" required />
+            <!-- Text input -->
+            <input id="email" type="email" name="email" placeholder="Your Email" required />
           </div>
-
-          <label for="subject" class="visually-hidden">Subject</label>
+          <!-- Text input -->
           <input id="subject" type="text" name="subject" placeholder="Subject" required />
-
-          <label for="message" class="visually-hidden">Your Message</label>
+          <!-- Text input (textarea) -->
           <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
           <!-- Botón -->
@@ -218,6 +245,7 @@
     <!-- Footer importado de components.js -->
     <m-footer></m-footer>
 
+    <!-- aquí creo footer y header -->
     <script src="JS/components.js"></script>
   </body>
 </html>
