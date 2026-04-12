@@ -28,8 +28,13 @@ class MiHeader extends HTMLElement {
     <a href="index.html" class="logo">Logo</a>
 
     <div class="login">
-      <input type="text" id="nav-username" name="username" placeholder="Usuari" autocomplete="username" />
-      <input type="password" id="nav-password" name="password" placeholder="••••••" autocomplete="current-password" />
+
+
+<form id="login" name="login">
+  <input type="text" name="user" required>
+  <input type="password" name="pass" required>
+  <button type="submit">Log in</button>
+</form>
       <a href="login.html"><i class="fa-solid fa-user"></i></a>
       <a href="favs.html"><i class="fa-solid fa-heart"></i></a>
     </div>
@@ -39,6 +44,8 @@ class MiHeader extends HTMLElement {
 
         `;
   }
+
+  
 }
 
 class MiFooter extends HTMLElement {
