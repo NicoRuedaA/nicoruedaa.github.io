@@ -29,13 +29,8 @@ class MiHeader extends HTMLElement {
 
     <div class="login">
 
-
-<form id="login" name="login">
-  <input type="text" name="user" required>
-  <input type="password" name="pass" required>
-  <button type="submit">Log in</button>
-</form>
-      <a href="login.html"><i class="fa-solid fa-user"></i></a>
+      <a href="login.html"><button>Log in</button></a>
+    
       <a href="favs.html"><i class="fa-solid fa-heart"></i></a>
     </div>
   </nav>

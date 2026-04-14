@@ -22,9 +22,15 @@
         <!-- Title -->
         <h1 class="title login" id="title-login"><i class="fa-solid fa-user"></i> Login</h1>
         <!-- Description -->
-        <p class="description login" id="description-login"><i class="fa-solid fa-circle-check"></i> Logged as...</p>
+        <form id="login" name="login">
+          <ul>
+            <li><input type="text" name="user" required /></li>
+            <li><input type="password" name="pass" required /></li>
+            <li><button type="submit">Log in</button></li>
+          </ul>
+        </form>
         <!-- Return Button -->
-        <a href="index.html"><button class="btn-return" id="btn-return">Return</button></a>
+        <!--<a href="index.html"><button class="btn-return" id="btn-return">Return</button></a>-->
       </section>
     </main>
 
@@ -32,5 +38,7 @@
     <m-footer></m-footer>
 
     <script src="JS/components.js"></script>
+    <!-- logica del login -->
+    <script src="JS/login.js"></script>
   </body>
 </html>

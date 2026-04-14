@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Para que sea reponsive  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nico Rueda</title>
+    <!-- Logos chu-chu-chulos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/headerFooter.css" />
+    <!-- Logos chu-chu-chulos -->
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.png" />
+  </head>
+
+  <body>
+    <!-- Nav importado de components.js -->
+    <m-header></m-header>
+
+    <main>
+      <!-- Container de productos -->
+      <section class="section products" id="products-container">
+        <!-- Producto -->
+        <article class="article product" id="product-container">
+          <!-- Imagen del producto -->
+          <img src="img/enconstruccion.gif" alt="Imagen del Proyecto" />
+          <!-- Categoría del producto -->
+          <p class="product-category">Categoría del proyecto</p>
+          <!-- Titulo del producto -->
+          <h1 class="product-title">Título del proyecto</h1>
+          <!-- Descripción del producto -->
+          <p class="product-description">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit arcu morbi volutpat nunc pretium, nascetur a blandit egestas viverra vulputate tristique varius neque parturient
+            fusce. Est porttitor cras per netus fusce nisi tellus, pharetra volutpat quam praesent aliquam ligula non sagittis, ut sapien sodales id placerat luctus. Gravida nullam
+            montes rutrum nunc dui praesent nibh placerat condimentum non, cubilia vehicula diam cursus lacinia maecenas torquent venenatis quam.
+          </p>
+          <!-- Añadir producto a favoritos -->
+          <div class="product-buttons">
+            <button onclick="favAdded()" class="btn-add-favorite" id="btn-add-favorite"><i class="fa-solid fa-heart"></i> Fav</button>
+          </div>
+          <!-- Producto interactivo -->
+          <div class="product-preview">
+            <iframe src="game-container.html"></iframe>
+          </div>
+        </article>
+        <!-- Botón para volver a inicio -->
+        <a href="index.html"><button class="btn-return" id="btn-return">Return</button></a>
+      </section>
+    </main>
+
+    <!-- Footer importado de components.js -->
+    <m-footer></m-footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/favs.js"></script>
+  </body>
+</html>
