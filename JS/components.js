@@ -28,8 +28,9 @@ class MiHeader extends HTMLElement {
     <a href="index.html" class="logo">Logo</a>
 
     <div class="login">
-
-      <a href="login.html"><button>Log in</button></a>
+      <a></a>
+      <a href="login.html" id="btn-ir-login"><button>Log in</button></a>
+      <a href="#" id="btn-logout"><button>Log Out</button></a>
     
       <a href="favs.html"><i class="fa-solid fa-heart"></i></a>
     </div>
@@ -38,6 +39,17 @@ class MiHeader extends HTMLElement {
 
 
         `;
+
+    // Actualizar botones 
+    actualizarHeader();
+
+    // logout aquí porque el elemento acaba de crearse
+    document.getElementById("btn-logout").addEventListener("click", function(e) {
+      e.preventDefault();
+      sessionStorage.removeItem("usuariLoguejat");
+      actualizarHeader();
+      window.location.href = "login.html";
+    });
   }
 
   
@@ -62,3 +74,21 @@ class MiFooter extends HTMLElement {
 // Registramos las nuevas etiquetas e
 customElements.define("m-header", MiHeader);
 customElements.define("m-footer", MiFooter);
+
+function actualizarHeader() {
+  const btnLogin  = document.getElementById("btn-ir-login");
+  const btnLogout = document.getElementById("btn-logout");
+  const userDisplay = document.querySelector(".login a:first-child"); // el texto vacío
+
+  const usuario = sessionStorage.getItem("usuariLoguejat");
+
+  if (usuario) {
+    btnLogin.classList.add("ocult");
+    btnLogout.classList.remove("ocult");
+    if (userDisplay) userDisplay.textContent = usuario;
+  } else {
+    btnLogin.classList.remove("ocult");
+    btnLogout.classList.add("ocult");
+    if (userDisplay) userDisplay.textContent = ""; // limpia al cerrar sesión
+  }
+}

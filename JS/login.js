@@ -1,10 +1,8 @@
-
-document.getElementById("login").addEventListener("submit", function(event) {
-  //sin recargar web
+document.getElementById("btn-login").addEventListener("submit", function(event) {
   event.preventDefault(); 
 
-  let user = (document.forms["login"]["user"].value);
-  let pass = (document.forms["login"]["pass"].value);
+  let user = (document.forms["btn-login"]["user"].value);
+  let pass = (document.forms["btn-login"]["pass"].value);
 
   if (user.length < 6 || user.length > 12) {
     alert("Usuari ha de tenir entre 6-12 caracters");
@@ -15,18 +13,17 @@ document.getElementById("login").addEventListener("submit", function(event) {
   else if (!caractersMinims(pass)) {
     alert("Contra ha de tenir una majuscula, una minuscula i un numero");
   }
-  
   else {
-      if (user===pass) {
-    alert("Login correcte");
-  }
-
-        else{
-    alert("Login incorrecte");
-  }
+    if (user === pass) {
+      sessionStorage.setItem("usuariLoguejat", user);
+      alert("Login correcte amb usuari " + user);
+      window.location.href = "index.html";
+    }
+    else {
+      alert("Login incorrecte");
+    }
   }
 });
-
 
 function caractersMinims(text) {
     let majuscula = false;
@@ -40,7 +37,7 @@ function caractersMinims(text) {
         else if (caracter === caracter.toUpperCase() && caracter !== caracter.toLowerCase()) {
             majuscula = true;
         }
-         else if (caracter === caracter.toLowerCase() && caracter !== caracter.toUpperCase()) {
+        else if (caracter === caracter.toLowerCase() && caracter !== caracter.toUpperCase()) {
             minuscula = true;
         }
     }
