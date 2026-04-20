@@ -1,99 +1,99 @@
 <!doctype html>
 <html>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    img {
-      vertical-align: middle;
-    }
-    .container {
-      position: relative;
-    }
-    .mySlides {
-      display: none;
-    }
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 40%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      user-select: none;
-    }
-    .prev {
-      border-radius: 0 3px 3px 0;
-    }
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
-  </style>
-  <body>
-    <div class="container">
-      <div class="mySlides">
-        <div class="numbertext">1 / 5</div>
-        <img src="../IMG/webs/artaimmobilien/1.PNG" style="width: 100%" />
-      </div>
-      <div class="mySlides">
-        <div class="numbertext">2 / 5</div>
-        <img src="../IMG/webs/artaimmobilien/2.PNG" style="width: 100%" />
-      </div>
-      <div class="mySlides">
-        <div class="numbertext">3 / 5</div>
-        <img src="../IMG/webs/artaimmobilien/3.PNG" style="width: 100%" />
-      </div>
-      <div class="mySlides">
-        <div class="numbertext">4 / 5</div>
-        <img src="../IMG/webs/artaimmobilien/4.PNG" style="width: 100%" />
-      </div>
-      <div class="mySlides">
-        <div class="numbertext">5 / 5</div>
-        <img src="../IMG/webs/artaimmobilien/5.PNG" style="width: 100%" />
-      </div>
-
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-      <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-
-    <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function showSlides(n) {
-        let slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) slideIndex = 1;
-        if (n < 1) slideIndex = slides.length;
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
         }
-        slides[slideIndex - 1].style.display = "block";
-      }
-    </script>
-  </body>
+        * {
+            box-sizing: border-box;
+        }
+        img {
+            vertical-align: middle;
+        }
+        .container {
+            position: relative;
+        }
+        .mySlides {
+            display: none;
+        }
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            user-select: none;
+        }
+        .prev {
+            border-radius: 0 3px 3px 0;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img src="../IMG/webs/artaimmobilien/1.PNG" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                <img src="../IMG/webs/artaimmobilien/2.png" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                <img src="../IMG/webs/artaimmobilien/3.png" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                <img src="../IMG/webs/artaimmobilien/4.png" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                <img src="../IMG/webs/artaimmobilien/5.png" style="width: 100%" />
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides((slideIndex += n));
+            }
+
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("mySlides");
+                if (n > slides.length) slideIndex = 1;
+                if (n < 1) slideIndex = slides.length;
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex - 1].style.display = "block";
+            }
+        </script>
+    </body>
 </html>
