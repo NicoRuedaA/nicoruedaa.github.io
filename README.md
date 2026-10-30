@@ -18,7 +18,7 @@ Sitio estático: HTML, CSS y JavaScript sin frameworks ni paso de build, biling�
 | --- | --- |
 | `index.html` | La web |
 | `assets/` | CSS, JS, imágenes, vídeos y los escaneos del cuaderno (`assets/cuaderno/`) |
-| `juegos/` | Builds jugables enlazadas desde la web: `catpire/` y `sapoGuvasto/` |
+| `juegos/` | Builds jugables enlazadas desde la web: `catpire/`, `sapoGuvasto/` e `isometric/` |
 
 Los detalles del diseño (cómo se recortan los escaneos, las figuras interactivas, los temas papel y tinta) están en el README del repo `NicoRuedaA/NicoRuedaA`, carpeta `portfolio/`.
 
