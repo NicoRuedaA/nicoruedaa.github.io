@@ -1,0 +1,53 @@
+/* ============================================================
+   V2 · design proposals layered over site.css (index-v2.html only)
+   Each block is numbered after the review so it can be kept or dropped.
+   ============================================================ */
+
+.v2-tag { position: fixed; z-index: 90; left: 12px; bottom: 12px; font-family: var(--f-mono); font-size: .72rem; padding: 4px 9px; background: var(--paper); border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none; transform: rotate(-2deg); }
+.v2-tag b { color: var(--red); }
+
+/* 1 · tighter section heads: less air, smaller side drawings, captions only for screen readers */
+.sheet { padding-block: clamp(48px, 6vw, 88px); }
+.sheet__head { margin-bottom: clamp(24px, 3vw, 40px); }
+.sheet__side .scan { max-width: 170px; }
+.sheet__side .scan figcaption > span:not(.label),
+#metodo .scan figcaption > span:not(.label) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.sheet__no .doodle--b { width: clamp(80px, 8vw, 110px); margin-top: 20px; }
+
+/* 2 · hero: a frame that fits the frog, sketch beside it instead of on its corner */
+.hero__fig { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); align-items: center; column-gap: 16px; }
+.hero__fig > .hero__stage, .hero__fig > .plate__cap { grid-column: 2; }
+.hero__stage { aspect-ratio: 4 / 5; }
+.hero__stage img { height: 86%; bottom: 6%; }
+.hero__sketch { position: relative; left: auto; top: auto; grid-column: 1; grid-row: 1; width: 100%; max-width: 200px; justify-self: end; transform: rotate(-6deg); }
+@media (max-width: 860px) {
+  .hero__fig { grid-template-columns: minmax(0, 1fr); }
+  .hero__fig > .hero__stage, .hero__fig > .plate__cap { grid-column: 1; }
+  .hero__stage { max-width: 300px; width: 100%; justify-self: center; }
+  .hero__fig > .plate__cap { justify-self: center; }
+  .hero__sketch { display: none; }
+}
+
+/* 4 · project index: a thumbnail follows the hovered row; tags never wrap */
+.index summary { grid-template-columns: 3.4rem minmax(0, 1.1fr) minmax(0, 1fr) 18rem; }
+.index__tags { white-space: nowrap; }
+.index__thumb { display: none; }
+@media (hover: hover) and (min-width: 1101px) {
+  .index__thumb {
+    display: block; position: absolute; z-index: 3; left: calc(3.4rem + 32px + (100% - 3.4rem - 18rem - 48px) * 1.1 / 2.1); top: 50%; width: 176px; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
+    border: 1.5px solid var(--ink); background: var(--sheet); box-shadow: 4px 5px 0 var(--rule);
+    opacity: 0; transform: translateY(-50%) rotate(-3deg) scale(.96); transition: opacity .16s, transform .16s; pointer-events: none;
+  }
+  .index__desc { transition: opacity .16s; }
+  .index summary:hover .index__desc { opacity: 0; }
+  .acc[open] > summary:hover .index__desc { opacity: 1; }
+  .index summary:hover .index__thumb { opacity: 1; transform: translateY(-50%) rotate(-3deg) scale(1); }
+  .acc[open] > summary .index__thumb { display: none; }
+}
+@media (max-width: 1100px) { .index__tags { white-space: normal; } }
+
+/* 5 · contact: a wider form, name and email side by side */
+.contact { max-width: 640px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+.contact > :not(.contact__f:nth-of-type(1)):not(.contact__f:nth-of-type(2)) { grid-column: 1 / -1; }
+.boss__art { gap: 4px; }
+@media (max-width: 600px) { .contact { grid-template-columns: 1fr; } }

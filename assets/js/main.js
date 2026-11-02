@@ -182,19 +182,76 @@ $$('[data-video]').forEach((btn) => {
   });
 });
 
-/* ---------------- sprite strips (frog idle: 4 frames @ 400 ms, as in the game) ---------------- */
+/* ---------------- contact form: posts in the background, no page change ---------------- */
+const cform = $('#contact-form');
+if (cform) {
+  const status = $('[data-status]', cform);
+  const say = (cls, es, en) => { status.className = 'contact__status ' + cls; setBi(status, es, en); };
+  cform.addEventListener('submit', async (ev) => {
+    if (!cform.checkValidity()) return; // the browser shows what is missing
+    ev.preventDefault();
+    if (cform.elements._honey.value) return;
+    const btn = cform.querySelector('button[type="submit"]');
+    btn.setAttribute('aria-busy', 'true');
+    say('', 'Enviando…', 'Sending…');
+    try {
+      const res = await fetch(cform.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(cform),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || out.success === 'false' || out.success === false) throw new Error(out.message || res.status);
+      cform.reset();
+      say('is-ok', 'Mensaje enviado. Gracias, te contesto pronto.', 'Message sent. Thanks, I will get back to you soon.');
+    } catch (e) {
+      say('is-err', 'No se pudo enviar. Inténtalo de nuevo en un rato.', 'Could not send. Please try again in a bit.');
+    } finally {
+      btn.removeAttribute('aria-busy');
+    }
+  });
+}
+
+/* ---------------- playable embeds: the iframe is only created on click ---------------- */
+$$('[data-embed]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const box = btn.closest('.vid');
+    if (!box || box.querySelector('iframe')) return;
+    const f = document.createElement('iframe');
+    f.src = btn.dataset.embed;
+    f.title = btn.dataset.title || '';
+    f.allow = 'fullscreen; autoplay; gamepad';
+    f.setAttribute('allowfullscreen', '');
+    box.appendChild(f);
+    box.classList.add('is-embedded');
+    f.focus();
+  });
+});
+
+/* ---------------- gameplay loops that play while the pointer rests on them ---------------- */
+// animated WebP rather than <video>: it loops in every browser, Safari included
+$$('[data-hover-src]').forEach((box) => {
+  let img = null;
+  box.addEventListener('pointerenter', (e) => {
+    if (e.pointerType !== 'mouse' || box.classList.contains('is-embedded') || reducedMotion()) return;
+    if (!img) {
+      img = document.createElement('img');
+      img.className = 'vid__loop'; img.alt = ''; img.decoding = 'async';
+      img.src = box.dataset.hoverSrc;
+      box.insertBefore(img, box.querySelector('.vid__play'));
+    }
+    img.hidden = false;
+  });
+  box.addEventListener('pointerleave', () => { if (img) img.hidden = true; });
+});
+
+/* ---------------- sprite strips (frog idle: 4 frames @ 400 ms, as in the game, looping while on screen) ---------------- */
 $$('[data-sprite]').forEach((el) => {
   const n = Number(el.dataset.sprite), ms = Number(el.dataset.ms || 150);
-  let i = 0, timer = 0, steps = 0;
-  const step = () => {
-    i = (i + 1) % n; el.style.backgroundPosition = `${(i / (n - 1)) * 100}% 0`;
-    if (++steps >= n * 8) { clearInterval(timer); timer = 0; } // plays 8 loops, then rests
-  };
-  const play = () => { if (!timer && !reducedMotion()) { steps = 0; timer = setInterval(step, ms); } };
+  let i = 0, timer = 0;
+  const step = () => { i = (i + 1) % n; el.style.backgroundPosition = `${(i / (n - 1)) * 100}% 0`; };
+  const play = () => { if (!timer && !reducedMotion()) timer = setInterval(step, ms); };
   new IntersectionObserver(([e]) => {
     if (e.isIntersecting) play(); else { clearInterval(timer); timer = 0; }
   }).observe(el);
-  el.closest('.game__media')?.addEventListener('pointerenter', play);
 });
 
 /* ---------------- Mobalike: 100 / (100 + armor) ---------------- */
@@ -394,9 +451,7 @@ $$('input[type="range"]').forEach((el) => { fillRange(el); el.addEventListener('
 const figs = {
   voxel: () => import('./fig-voxel.js'),
   scout: () => import('./fig-scout.js'),
-  replay: () => import('./fig-replay.js'),
   face: () => import('./fig-face.js'),
-  hex: () => import('./fig-hex.js'),
   bytes: () => import('./fig-bytes.js'),
 };
 function mountFig(el) {
@@ -415,3 +470,19 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => { if (e.isIntersecting) { io.unobserve(e.target); mountFig(e.target); } });
 }, { rootMargin: '600px 0px' });
 $$('[data-fig]').forEach((el) => (EAGER.has(el.dataset.fig) ? mountFig(el) : io.observe(el)));
+
+/* ---------------- work index: each row unfolds its case ---------------- */
+const openCase = () => {
+  const t = location.hash.length > 1 ? document.querySelector(location.hash) : null;
+  const d = t ? t.closest('details.acc') : null;
+  if (d && !d.open) { d.open = true; t.scrollIntoView(); }
+};
+// only an in-page link opens a case; every load starts with all of them closed
+// (Chrome expands a <details> by itself when the URL fragment points inside it)
+window.addEventListener('hashchange', openCase);
+const closeCases = () => $$('details.acc[open]').forEach((d) => { d.open = false; });
+closeCases();
+window.addEventListener('load', closeCases, { once: true });
+
+// layout editor, only when the page is opened with ?edit
+if (new URLSearchParams(location.search).has('edit')) import('./editor.js');
