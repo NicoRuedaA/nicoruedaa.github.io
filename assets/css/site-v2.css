@@ -1,10 +1,7 @@
 /* ============================================================
-   V2 · design proposals layered over site.css (index-v2.html only)
+   V2 · design proposals layered over site.css (index.html only)
    Each block is numbered after the review so it can be kept or dropped.
    ============================================================ */
-
-.v2-tag { position: fixed; z-index: 90; left: 12px; bottom: 12px; font-family: var(--f-mono); font-size: .72rem; padding: 4px 9px; background: var(--paper); border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none; transform: rotate(-2deg); }
-.v2-tag b { color: var(--red); }
 
 /* 1 · tighter section heads: less air, smaller side drawings, captions only for screen readers */
 .sheet { padding-block: clamp(48px, 6vw, 88px); }
